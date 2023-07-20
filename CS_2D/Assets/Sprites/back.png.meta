@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb32b1f8229aec74dba8d6f7c2f47ea2
+guid: 8c8777cf7f69b2b468a15433415307d4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Green Slime Idle_0
+      name: back_0
       rect:
         serializedVersion: 2
         x: 0
@@ -157,20 +157,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87c5a6494e70948408a34bacce26589f
-      internalID: 550651952
+      spriteID: 80579967b73c99248aef72c3a9bd0702
+      internalID: -317642423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Slime Idle_1
+      name: back_1
       rect:
         serializedVersion: 2
         x: 32
@@ -178,20 +178,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5262d08d029a4441a24c5dcd0b544c9
-      internalID: -1424451429
+      spriteID: 1380950b5847d4c4486df8ea1d78947b
+      internalID: 86744893
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Slime Idle_2
+      name: back_2
       rect:
         serializedVersion: 2
         x: 64
@@ -199,20 +199,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1eefa3eb808e37d48af651b0a8f88bf1
-      internalID: 855620095
+      spriteID: 1bd1ff2aa7451fa4d89c19fe19d47637
+      internalID: -1390983985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Slime Idle_3
+      name: back_3
       rect:
         serializedVersion: 2
         x: 96
@@ -220,20 +220,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fcbfa1d92ae49954cbfe98b88be85085
-      internalID: -1216408347
+      spriteID: 4a581bf5ae7c40047afb2c044601181d
+      internalID: -1359896855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Slime Idle_4
+      name: back_4
       rect:
         serializedVersion: 2
         x: 128
@@ -241,20 +241,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a75c4ed8554905c47b78a0d88f9037e1
-      internalID: -1633932956
+      spriteID: a4790c4c7d7751541acd79a51c5778dc
+      internalID: 885712305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Slime Idle_5
+      name: back_5
       rect:
         serializedVersion: 2
         x: 160
@@ -262,20 +262,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75cb78494cdf35d4f9abe8eefb327478
-      internalID: -212238605
+      spriteID: 26b0c6d61329b1647b39162feef21f14
+      internalID: 559877366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Green Slime Idle_6
+      name: back_6
       rect:
         serializedVersion: 2
         x: 192
@@ -283,14 +283,35 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87318e4cec9d0d84aa8dd219d96a6329
-      internalID: -611638151
+      spriteID: c397587fb2f0f144f8f67fdc69f35575
+      internalID: 1524679666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: back_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96620023def9b6445982f6d9e0066ade
+      internalID: 2115802215
       vertices: []
       indices: 
       edges: []
@@ -306,13 +327,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Green Slime Idle_0: 550651952
-      Green Slime Idle_1: -1424451429
-      Green Slime Idle_2: 855620095
-      Green Slime Idle_3: -1216408347
-      Green Slime Idle_4: -1633932956
-      Green Slime Idle_5: -212238605
-      Green Slime Idle_6: -611638151
+      back_0: -317642423
+      back_1: 86744893
+      back_2: -1390983985
+      back_3: -1359896855
+      back_4: 885712305
+      back_5: 559877366
+      back_6: 1524679666
+      back_7: 2115802215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
