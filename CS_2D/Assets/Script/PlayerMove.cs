@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     float h;
     float v;
     bool isHorizonMove;
-    
+    Animator anim;
     SpriteRenderer spriter;
     Rigidbody2D rigid;
     
@@ -15,7 +15,9 @@ public class PlayerMove : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
+
     void Update()
     {
         //Move Value
@@ -29,24 +31,33 @@ public class PlayerMove : MonoBehaviour
         bool vUp = Input.GetButtonUp("Vertical");
 
         //Check Horizontal Move
-        if(hDown || vUp){
+        if(hDown || vUp)
+        {
             isHorizonMove = true;
         }
-        else if(vDown || hUp){
+        else if(vDown || hUp)
+        {
             isHorizonMove = false;
         }
         //Animation
-        anim.SetInteger("hAxisRaw", (int)h);
-        anim.SetInteger("vAxisRaw", (int)v);
+        if (anim.GetInteger("hAxisRaw") != h)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("hAxisRaw", (int)h);
+        }
+        else if (anim.GetInteger("vAxisRaw") != v)
+        {
+            anim.SetBool("isChange", true);
+            anim.SetInteger("vAxisRaw", (int)v);
+        }
+        else    
+            anim.SetBool("isChange", false);
     }
-    void FixedUpdate() {
+    void FixedUpdate() 
+    {
         //위치 이동
         Vector2 moveVec = isHorizonMove ? new Vector2(h,0) : new Vector2(0,v);
         rigid.velocity = moveVec * speed;
     }
-    void LateUpdate(){
-        if (h != 0){
-            spriter.flipX = h < 0; 
-        }
-    }
+
 }
