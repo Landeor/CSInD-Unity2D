@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField]
     public float speed;
-    float h;
-    float v;
+    public JoyStick JoyStick;
+    public float h;
+    public float v;
+    float h_value; //모바일 전용 이동 변수
+    float v_value;
     bool isHorizonMove;
     Animator anim;
     SpriteRenderer spriter;
     Rigidbody2D rigid;
     
-    void Awake()
+    void Awake() //컴포넌트 초기화
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
@@ -20,11 +25,13 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        //Move Value
-        h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical");
+        //상하좌우 변수
+        h_value = JoyStick.Horizontal();
+        v_value = JoyStick.Vertical();
+        h = Input.GetAxisRaw("Horizontal") + h_value;
+        v = Input.GetAxisRaw("Vertical") + v_value;   
 
-        //Check Vutton Down & Up
+        //4방향 이동 변수
         bool hDown = Input.GetButtonDown("Horizontal");
         bool vDown = Input.GetButtonDown("Vertical");
         bool hUp = Input.GetButtonUp("Horizontal");
@@ -39,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         {
             isHorizonMove = false;
         }
-        //Animation
+        //애니메이션
         if (anim.GetInteger("hAxisRaw") != h)
         {
             anim.SetBool("isChange", true);
@@ -61,3 +68,4 @@ public class PlayerMove : MonoBehaviour
     }
 
 }
+
