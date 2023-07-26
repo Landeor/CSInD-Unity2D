@@ -9,13 +9,13 @@ public class PlayerMove : MonoBehaviour
     public JoyStick JoyStick;
     public float h;
     public float v;
-    float h_value; //모바일 전용 이동 변수
-    float v_value;
     bool isHorizonMove;
     Animator anim;
     SpriteRenderer spriter;
     Rigidbody2D rigid;
-    
+    GameObject scanObject;
+    Vector3 dirVec; 
+
     void Awake() //컴포넌트 초기화
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -26,16 +26,27 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         //상하좌우 변수
-        h_value = JoyStick.Horizontal();
-        v_value = JoyStick.Vertical();
-        h = Input.GetAxisRaw("Horizontal") + h_value;
-        v = Input.GetAxisRaw("Vertical") + v_value;   
+        h = Input.GetAxisRaw("Horizontal");
+        v = Input.GetAxisRaw("Vertical");   
 
-        //4방향 이동 변수
+        //4방향 고정 보조 변수
         bool hDown = Input.GetButtonDown("Horizontal");
         bool vDown = Input.GetButtonDown("Vertical");
         bool hUp = Input.GetButtonUp("Horizontal");
         bool vUp = Input.GetButtonUp("Vertical");
+        
+        //현재 방향 체크
+        if (h == 1)   
+            dirVec = Vector3.right;
+       
+        else if (h == -1)
+            dirVec = Vector3.left;
+       
+        else if (v == 1)
+            dirVec = Vector3.up;
+       
+        else if (v == -1)
+            dirVec = Vector3.down;
 
         //Check Horizontal Move
         if(hDown || vUp)
@@ -45,6 +56,12 @@ public class PlayerMove : MonoBehaviour
         else if(vDown || hUp)
         {
             isHorizonMove = false;
+        }
+
+        //조사 
+        if(Input.GetButtonDown("Jump") && scanObject != null)
+        {
+            Debug.Log(scanObject.name);
         }
         //애니메이션
         if (anim.GetInteger("hAxisRaw") != h)
@@ -59,12 +76,26 @@ public class PlayerMove : MonoBehaviour
         }
         else    
             anim.SetBool("isChange", false);
-    }
-    void FixedUpdate() 
-    {
+
         //위치 이동
         Vector2 moveVec = isHorizonMove ? new Vector2(h,0) : new Vector2(0,v);
         rigid.velocity = moveVec * speed;
+    }
+
+    void FixedUpdate() 
+    {
+        //DrawRay 생성
+        Debug.DrawRay(rigid.position, dirVec * 2f, new Color(0,1,0));
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec , 2f, LayerMask.GetMask("Border"));
+        
+        if(rayHit.collider != null)
+        {
+            scanObject  = rayHit.collider.gameObject;
+        }
+        else 
+        {
+            scanObject = null;
+        }
     }
 
 }
