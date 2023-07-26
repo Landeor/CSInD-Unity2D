@@ -36,7 +36,7 @@ public class JoyStick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public void OnPointerDown(PointerEventData eventData) //터치 상태일 때 매 프레임
     {
-        Debug.Log("Touch Began : "+eventData);
+        Debug.Log("Touch Began : "+ eventData);
     }
 
     public void OnPointerUp(PointerEventData eventData) //터치 종료 시 1회
